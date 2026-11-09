@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí do Sandrinho | Link na Bio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #120919;
+            color: #ffffff;
+        }
+        .bg-card {
+            background-color: #23122c;
+            border: 1px solid #381c45;
+        }
+        .bg-card-light {
+            background-color: #fff9ed;
+            color: #120919;
+        }
+        .bg-gold {
+            background-color: #ffca28;
+            color: #120919;
+        }
+        .bg-gold:hover {
+            background-color: #f5bc14;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1d0d26;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4a245d;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex justify-center items-center p-0 sm:p-4">
+
+    <main class="w-full max-w-md min-h-screen sm:min-h-0 sm:my-4 bg-[#120919] sm:rounded-3xl p-5 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+        
+        <div>
+            <!-- Banner / Logo -->
+            <div class="flex justify-center mb-4">
+                <div class="w-[100px] h-[100px] rounded-2xl overflow-hidden shadow-lg border border-[#381c45]">
+                    <img src="https://raw.githubusercontent.com/lucasvini-eng/logos-src/refs/heads/main/logo-59.jpg" 
+                         alt="Açaí do Sandrinho Logo" 
+                         class="w-full h-full object-cover block"
+                         onerror="this.onerror=null; this.src='https://placehold.co/100x100/23122c/ffffff?text=A%C3%A7a%C3%AD';">
+                </div>
+            </div>
+
+            <!-- Subtítulo e Título Principal -->
+            <div class="flex items-center justify-center gap-1.5 text-pink-400 text-xs font-semibold tracking-wide uppercase mb-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Porto Calvo / AL</span>
+            </div>
+
+            <h1 class="text-2xl font-extrabold text-center tracking-tight text-white mb-1">
+                Bateu vontade de açaí?
+            </h1>
+            <p class="text-xs text-gray-300 text-center mb-6">
+                Caprichado nos sabores. Feito do seu jeito.
+            </p>
+
+            <!-- Botão Destaque: Delivery WhatsApp -->
+            <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20de%20a%C3%A7a%C3%AD." 
+               target="_blank"
+               class="bg-gold p-4 rounded-2xl flex items-center justify-between shadow-lg transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] mb-6 cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center bg-black/5">
+                        <svg class="w-6 h-6 text-[#120919]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold block text-[#120919]/70 leading-tight">Delivery por WhatsApp</span>
+                        <span class="text-lg font-black text-[#120919] leading-tight">(82) 99640-2650</span>
+                    </div>
+                </div>
+                <svg class="w-5 h-5 text-[#120919]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </a>
+
+            <!-- Subtítulo de Seção -->
+            <p class="text-[10px] font-bold tracking-widest text-gray-400 uppercase mb-3">
+                ESCOLHA E APROVEITE
+            </p>
+
+            <!-- Lista de Links -->
+            <div class="space-y-3">
+                <!-- Cardápio Digital (Abre Modal de Montagem) -->
+                <button onclick="openMenuModal()" 
+                        class="w-full bg-card-light text-[#120919] p-3.5 rounded-2xl flex items-center justify-between text-left shadow-md transform transition-all duration-200 hover:scale-[1.01] active:scale-[0.99] cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-400/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-sm block leading-tight text-[#120919]">Cardápio digital</span>
+                            <span class="text-xs text-gray-600 block leading-tight">Escolha sua próxima combinação</span>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+
+                <!-- Avaliação Google Maps -->
+                <a href="https://maps.app.goo.gl/NfjPhdp9vrAomXty9" 
+                   target="_blank" 
+                   class="bg-card p-3.5 rounded-2xl flex items-center justify-between text-left transition-all hover:border-purple-500/50 block">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-900/40 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-sm block leading-tight text-white">Avaliação no Google Maps</span>
+                            <span class="text-xs text-gray-400 block leading-tight">Sua opinião deixa tudo melhor</span>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+
+                <!-- iFood -->
+                <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Vim%20pelo%20link%20do%20iFood." 
+                   target="_blank" 
+                   class="bg-card p-3.5 rounded-2xl flex items-center justify-between text-left transition-all hover:border-purple-500/50 block">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-900/40 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-sm block leading-tight text-white">iFood</span>
+                            <span class="text-xs text-gray-400 block leading-tight">Peça pelo aplicativo</span>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Vim%20pelo%20Instagram." 
+                   target="_blank" 
+                   class="bg-card p-3.5 rounded-2xl flex items-center justify-between text-left transition-all hover:border-purple-500/50 block">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-900/40 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke-width="2"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2"></line>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-sm block leading-tight text-white">Instagram</span>
+                            <span class="text-xs text-gray-400 block leading-tight">Uma dose de açaí no seu feed</span>
+                        </div>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Cards Infofooter (Localização + Horário) -->
+            <div class="grid grid-cols-2 gap-3 mt-4">
+                <!-- Localização -->
+                <a href="https://maps.app.goo.gl/NfjPhdp9vrAomXty9" target="_blank" class="bg-card p-3.5 rounded-2xl transition-all hover:border-purple-500/50">
+                    <div class="flex items-center gap-1.5 text-pink-400 text-xs font-semibold mb-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="text-[11px] text-gray-300">Localização</span>
+                    </div>
+                    <p class="font-bold text-sm text-white leading-tight">Porto Calvo</p>
+                    <p class="text-[11px] text-gray-400">Alagoas · AL</p>
+                </a>
+
+                <!-- Horário -->
+                <div class="bg-card p-3.5 rounded-2xl">
+                    <div class="flex items-center gap-1.5 text-pink-400 text-xs font-semibold mb-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="text-[11px] text-gray-300">Horário de funcionamento</span>
+                    </div>
+                    <p class="font-bold text-sm text-white leading-tight mt-2">das 14h às 00h</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="mt-8 text-center border-t border-purple-900/30 pt-4">
+            <div class="flex items-center justify-center gap-2 text-xs text-gray-400">
+                <span class="w-6 h-[1px] bg-pink-500/50"></span>
+                <span>Do seu jeito. Com muito açaí.</span>
+                <span class="w-6 h-[1px] bg-pink-500/50"></span>
+            </div>
+            <p class="text-[10px] text-gray-500 mt-1">CEO: @sdellanno16</p>
+        </div>
+
+    </main>
+
+    <!-- Modal do Cardápio Interativo de Monte Seu Açaí -->
+    <div id="menuModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex justify-center items-end sm:items-center hidden">
+        <div class="bg-[#190c24] w-full max-w-md max-h-[90vh] rounded-t-3xl sm:rounded-3xl p-5 border border-purple-900/50 flex flex-col justify-between overflow-hidden shadow-2xl animate-fade-in">
+            
+            <!-- Cabeçalho do Modal -->
+            <div class="flex items-center justify-between pb-3 border-b border-purple-900/40">
+                <div>
+                    <h2 class="text-xl font-extrabold text-white">Monte seu Açaí 🍨</h2>
+                    <p class="text-xs text-gray-400">Escolha o tamanho e adicionais</p>
+                </div>
+                <button onclick="closeMenuModal()" class="w-8 h-8 rounded-full bg-purple-900/40 text-gray-400 hover:text-white flex items-center justify-center">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Formulário de Seleção (Scrollável) -->
+            <div class="overflow-y-auto py-4 space-y-5 custom-scrollbar pr-1">
+                
+                <!-- 1. Tamanho -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">1. Escolha o Tamanho *</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-[#23122c] border border-purple-900/50 cursor-pointer hover:border-pink-500/40">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="tamanho" value="300ml" data-price="12.00" onchange="calculateTotal()" class="accent-pink-500" checked>
+                                <span class="text-sm font-semibold text-white">Açaí 300ml</span>
+                            </div>
+                            <span class="text-sm font-bold text-amber-400">R$ 12,00</span>
+                        </label>
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-[#23122c] border border-purple-900/50 cursor-pointer hover:border-pink-500/40">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="tamanho" value="500ml" data-price="17.00" onchange="calculateTotal()" class="accent-pink-500">
+                                <span class="text-sm font-semibold text-white">Açaí 500ml</span>
+                            </div>
+                            <span class="text-sm font-bold text-amber-400">R$ 17,00</span>
+                        </label>
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-[#23122c] border border-purple-900/50 cursor-pointer hover:border-pink-500/40">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="tamanho" value="700ml" data-price="22.00" onchange="calculateTotal()" class="accent-pink-500">
+                                <span class="text-sm font-semibold text-white">Açaí 700ml</span>
+                            </div>
+                            <span class="text-sm font-bold text-amber-400">R$ 22,00</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. Acompanhamentos Grátis -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">2. Acompanhamentos Grátis (Escolha até 3)</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="acompanhamento" value="Leite em Pó" class="accent-pink-500 rounded"> Leite em Pó
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="acompanhamento" value="Granola" class="accent-pink-500 rounded"> Granola
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="acompanhamento" value="Paçoca" class="accent-pink-500 rounded"> Paçoca
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="acompanhamento" value="Banana" class="accent-pink-500 rounded"> Banana
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="acompanhamento" value="Morango" class="accent-pink-500 rounded"> Morango
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="acompanhamento" value="Chocoball" class="accent-pink-500 rounded"> Chocoball
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. Calda -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">3. Calda Especial</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="radio" name="calda" value="Leite Condensado" class="accent-pink-500" checked> Leite Condensado
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="radio" name="calda" value="Calda de Chocolate" class="accent-pink-500"> Chocolate
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="radio" name="calda" value="Calda de Morango" class="accent-pink-500"> Morango
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="radio" name="calda" value="Sem Calda" class="accent-pink-500"> Sem Calda
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 4. Adicionais Pagos -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">4. Turbinar Açaí (Opcional)</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center justify-between p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs cursor-pointer">
+                            <div class="flex items-center gap-2 text-gray-200">
+                                <input type="checkbox" name="adicional" value="Nutella" data-price="4.50" onchange="calculateTotal()" class="accent-pink-500 rounded"> Nutella (+R$ 4,50)
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-between p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs cursor-pointer">
+                            <div class="flex items-center gap-2 text-gray-200">
+                                <input type="checkbox" name="adicional" value="Creme de Ninho" data-price="3.50" onchange="calculateTotal()" class="accent-pink-500 rounded"> Creme de Ninho (+R$ 3,50)
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-between p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs cursor-pointer">
+                            <div class="flex items-center gap-2 text-gray-200">
+                                <input type="checkbox" name="adicional" value="Ovomaltine" data-price="3.00" onchange="calculateTotal()" class="accent-pink-500 rounded"> Ovomaltine Extra (+R$ 3,00)
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 5. Observação -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">Observações</h3>
+                    <textarea id="obs" placeholder="Ex: Capricha na calda, retirar granola..." class="w-full bg-[#23122c] border border-purple-900/50 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-pink-500 resize-none h-16"></textarea>
+                </div>
+
+            </div>
+
+            <!-- Rodapé com Total e Botão WhatsApp -->
+            <div class="pt-3 border-t border-purple-900/40 flex items-center justify-between gap-3">
+                <div>
+                    <span class="text-[10px] text-gray-400 uppercase tracking-wider font-bold block leading-none">Total estimado</span>
+                    <span id="totalPrice" class="text-xl font-extrabold text-amber-400">R$ 12,00</span>
+                </div>
+                <button onclick="sendOrderToWhatsApp()" class="flex-1 bg-gold text-[#120919] font-extrabold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 hover:bg-yellow-400 transition-all shadow-md">
+                    <span>Finalizar no WhatsApp</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function openMenuModal() {
+            document.getElementById('menuModal').classList.remove('hidden');
+            calculateTotal();
+        }
+
+        function closeMenuModal() {
+            document.getElementById('menuModal').classList.add('hidden');
+        }
+
+        function calculateTotal() {
+            let total = 0;
+
+            const selectedTamanho = document.querySelector('input[name="tamanho"]:checked');
+            if (selectedTamanho) {
+                total += parseFloat(selectedTamanho.getAttribute('data-price'));
+            }
+
+            const selectedAdicionais = document.querySelectorAll('input[name="adicional"]:checked');
+            selectedAdicionais.forEach(item => {
+                total += parseFloat(item.getAttribute('data-price'));
+            });
+
+            document.getElementById('totalPrice').innerText = 'R$ ' + total.toFixed(2).replace('.', ',');
+        }
+
+        function sendOrderToWhatsApp() {
+            const selectedTamanho = document.querySelector('input[name="tamanho"]:checked');
+            const tamanhoVal = selectedTamanho ? selectedTamanho.value : 'Não informado';
+            
+            const acompanhamentos = Array.from(document.querySelectorAll('input[name="acompanhamento"]:checked'))
+                                         .map(el => el.value);
+            
+            const selectedCalda = document.querySelector('input[name="calda"]:checked');
+            const caldaVal = selectedCalda ? selectedCalda.value : 'Sem Calda';
+            
+            const adicionais = Array.from(document.querySelectorAll('input[name="adicional"]:checked'))
+                                    .map(el => el.value);
+            
+            const obs = document.getElementById('obs').value.trim();
+            const total = document.getElementById('totalPrice').innerText;
+
+            let message = `*NOVO PEDIDO - AÇAÍ DO SANDRINHO*\n\n`;
+            message += `🍧 *Tamanho:* ${tamanhoVal}\n`;
+            message += `✨ *Acompanhamentos:* ${acompanhamentos.length > 0 ? acompanhamentos.join(', ') : 'Nenhum'}\n`;
+            message += `🍯 *Calda:* ${caldaVal}\n`;
+            message += `➕ *Adicionais:* ${adicionais.length > 0 ? adicionais.join(', ') : 'Nenhum'}\n`;
+            
+            if (obs) {
+                message += `📝 *Obs:* ${obs}\n`;
+            }
+            
+            message += `\n💰 *Total:* ${total}`;
+
+            const phone = '5582996402650';
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
