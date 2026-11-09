@@ -72,10 +72,10 @@
                 Caprichado nos sabores. Feito do seu jeito.
             </p>
 
-            <!-- Botão Destaque: Delivery WhatsApp -->
-            <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20de%20a%C3%A7a%C3%AD." 
-               target="_blank"
-               class="bg-gold p-4 rounded-2xl flex items-center justify-between shadow-lg transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] mb-6 cursor-pointer">
+            <!-- Botão Destaque: Monte seu Açaí / Delivery WhatsApp -->
+            <!-- Botão Destaque: Monte seu Açaí -->
+            <button onclick="openMenuModal()" 
+                    class="w-full bg-gold p-4 rounded-2xl flex items-center justify-between shadow-lg transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] mb-6 cursor-pointer text-left">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center bg-black/5">
                         <svg class="w-6 h-6 text-[#120919]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -83,14 +83,16 @@
                         </svg>
                     </div>
                     <div>
-                        <span class="text-xs font-semibold block text-[#120919]/70 leading-tight">Delivery por WhatsApp</span>
-                        <span class="text-lg font-black text-[#120919] leading-tight">(82) 99640-2650</span>
+                        <span class="text-base font-extrabold text-[#120919] leading-tight block">Monte seu Açaí</span>
                     </div>
                 </div>
-                <svg class="w-5 h-5 text-[#120919]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-            </a>
+                <div class="flex items-center gap-1 font-bold text-xs bg-black/10 px-2.5 py-1 rounded-lg text-[#120919]">
+                    <span>Pedir</span>
+                    <svg class="w-4 h-4 text-[#120919]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+            </button>
 
             <!-- Subtítulo de Seção -->
             <p class="text-[10px] font-bold tracking-widest text-gray-400 uppercase mb-3">
@@ -99,8 +101,8 @@
 
             <!-- Lista de Links -->
             <div class="space-y-3">
-                <!-- Cardápio Digital (Abre Modal de Montagem) -->
-                <button onclick="openMenuModal()" 
+                <!-- Cardápio Digital (Abre Modal de Sorvetes) -->
+                <button onclick="openSorveteModal()" 
                         class="w-full bg-card-light text-[#120919] p-3.5 rounded-2xl flex items-center justify-between text-left shadow-md transform transition-all duration-200 hover:scale-[1.01] active:scale-[0.99] cursor-pointer">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-xl bg-amber-400/20 flex items-center justify-center">
@@ -110,7 +112,7 @@
                         </div>
                         <div>
                             <span class="font-bold text-sm block leading-tight text-[#120919]">Cardápio digital</span>
-                            <span class="text-xs text-gray-600 block leading-tight">Escolha sua próxima combinação</span>
+                            <span class="text-xs text-gray-600 block leading-tight">Monte sua taça de sorvete deliciosa</span>
                         </div>
                     </div>
                     <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -358,6 +360,143 @@
         </div>
     </div>
 
+    <!-- Modal do Cardápio Digital - Seleção de Sorvetes -->
+    <div id="sorveteModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex justify-center items-end sm:items-center hidden">
+        <div class="bg-[#190c24] w-full max-w-md max-h-[90vh] rounded-t-3xl sm:rounded-3xl p-5 border border-purple-900/50 flex flex-col justify-between overflow-hidden shadow-2xl animate-fade-in">
+            
+            <!-- Cabeçalho do Modal -->
+            <div class="flex items-center justify-between pb-3 border-b border-purple-900/40">
+                <div>
+                    <h2 class="text-xl font-extrabold text-white">Cardápio de Sorvetes 🍦</h2>
+                    <p class="text-xs text-gray-400">Monte sua taça ou copo de sorvete</p>
+                </div>
+                <button onclick="closeSorveteModal()" class="w-8 h-8 rounded-full bg-purple-900/40 text-gray-400 hover:text-white flex items-center justify-center">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Formulário de Seleção do Sorvete -->
+            <div class="overflow-y-auto py-4 space-y-5 custom-scrollbar pr-1">
+                
+                <!-- 1. Tamanho do Sorvete -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">1. Escolha a Opção *</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-[#23122c] border border-purple-900/50 cursor-pointer hover:border-pink-500/40">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="tamanhoSorvete" value="Copo 2 Bolas (250ml)" data-price="10.00" onchange="calculateSorveteTotal()" class="accent-pink-500" checked>
+                                <span class="text-sm font-semibold text-white">Copo 2 Bolas</span>
+                            </div>
+                            <span class="text-sm font-bold text-amber-400">R$ 10,00</span>
+                        </label>
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-[#23122c] border border-purple-900/50 cursor-pointer hover:border-pink-500/40">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="tamanhoSorvete" value="Copo 3 Bolas (350ml)" data-price="14.00" onchange="calculateSorveteTotal()" class="accent-pink-500">
+                                <span class="text-sm font-semibold text-white">Copo 3 Bolas</span>
+                            </div>
+                            <span class="text-sm font-bold text-amber-400">R$ 14,00</span>
+                        </label>
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-[#23122c] border border-purple-900/50 cursor-pointer hover:border-pink-500/40">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="tamanhoSorvete" value="Taça Especial (500ml)" data-price="18.00" onchange="calculateSorveteTotal()" class="accent-pink-500">
+                                <span class="text-sm font-semibold text-white">Taça Especial</span>
+                            </div>
+                            <span class="text-sm font-bold text-amber-400">R$ 18,00</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. Sabores do Sorvete -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">2. Escolha os Sabores (Selecione)</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="saborSorvete" value="Chocolate" class="accent-pink-500 rounded"> Chocolate
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="saborSorvete" value="Creme" class="accent-pink-500 rounded"> Creme
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="saborSorvete" value="Morango" class="accent-pink-500 rounded"> Morango
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="saborSorvete" value="Flocos" class="accent-pink-500 rounded"> Flocos
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="saborSorvete" value="Ninho Trufado" class="accent-pink-500 rounded"> Ninho Trufado
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="checkbox" name="saborSorvete" value="Ovomaltine" class="accent-pink-500 rounded"> Ovomaltine
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. Cobertura -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">3. Cobertura</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="radio" name="coberturaSorvete" value="Chocolate" class="accent-pink-500" checked> Chocolate
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="radio" name="coberturaSorvete" value="Caramelo" class="accent-pink-500"> Caramelo
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="radio" name="coberturaSorvete" value="Morango" class="accent-pink-500"> Morango
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs text-gray-200 cursor-pointer">
+                            <input type="radio" name="coberturaSorvete" value="Sem Cobertura" class="accent-pink-500"> Sem Cobertura
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 4. Acompanhamentos e Confeitos -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">4. Confeitos & Extras</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center justify-between p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs cursor-pointer">
+                            <div class="flex items-center gap-2 text-gray-200">
+                                <input type="checkbox" name="extraSorvete" value="Granulado Chocolate" data-price="1.50" onchange="calculateSorveteTotal()" class="accent-pink-500 rounded"> Granulado (+R$ 1,50)
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-between p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs cursor-pointer">
+                            <div class="flex items-center gap-2 text-gray-200">
+                                <input type="checkbox" name="extraSorvete" value="Confeti (M&M)" data-price="2.00" onchange="calculateSorveteTotal()" class="accent-pink-500 rounded"> Confetis (+R$ 2,00)
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-between p-2.5 rounded-xl bg-[#23122c] border border-purple-900/40 text-xs cursor-pointer">
+                            <div class="flex items-center gap-2 text-gray-200">
+                                <input type="checkbox" name="extraSorvete" value="Chantilly" data-price="3.00" onchange="calculateSorveteTotal()" class="accent-pink-500 rounded"> Chantilly Top (+R$ 3,00)
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 5. Observação -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-2">Observações</h3>
+                    <textarea id="obsSorvete" placeholder="Ex: Bastante cobertura de caramelo, mandar canudo..." class="w-full bg-[#23122c] border border-purple-900/50 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-pink-500 resize-none h-16"></textarea>
+                </div>
+
+            </div>
+
+            <!-- Rodapé Sorvete -->
+            <div class="pt-3 border-t border-purple-900/40 flex items-center justify-between gap-3">
+                <div>
+                    <span class="text-[10px] text-gray-400 uppercase tracking-wider font-bold block leading-none">Total estimado</span>
+                    <span id="totalSorvetePrice" class="text-xl font-extrabold text-amber-400">R$ 10,00</span>
+                </div>
+                <button onclick="sendSorveteOrderToWhatsApp()" class="flex-1 bg-gold text-[#120919] font-extrabold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 hover:bg-yellow-400 transition-all shadow-md">
+                    <span>Pedir Sorvete no WhatsApp</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
     <script>
         function openMenuModal() {
             document.getElementById('menuModal').classList.remove('hidden');
@@ -366,6 +505,15 @@
 
         function closeMenuModal() {
             document.getElementById('menuModal').classList.add('hidden');
+        }
+
+        function openSorveteModal() {
+            document.getElementById('sorveteModal').classList.remove('hidden');
+            calculateSorveteTotal();
+        }
+
+        function closeSorveteModal() {
+            document.getElementById('sorveteModal').classList.add('hidden');
         }
 
         function calculateTotal() {
@@ -382,6 +530,22 @@
             });
 
             document.getElementById('totalPrice').innerText = 'R$ ' + total.toFixed(2).replace('.', ',');
+        }
+
+        function calculateSorveteTotal() {
+            let total = 0;
+
+            const selectedTamanho = document.querySelector('input[name="tamanhoSorvete"]:checked');
+            if (selectedTamanho) {
+                total += parseFloat(selectedTamanho.getAttribute('data-price'));
+            }
+
+            const selectedExtras = document.querySelectorAll('input[name="extraSorvete"]:checked');
+            selectedExtras.forEach(item => {
+                total += parseFloat(item.getAttribute('data-price'));
+            });
+
+            document.getElementById('totalSorvetePrice').innerText = 'R$ ' + total.toFixed(2).replace('.', ',');
         }
 
         function sendOrderToWhatsApp() {
@@ -405,6 +569,39 @@
             message += `✨ *Acompanhamentos:* ${acompanhamentos.length > 0 ? acompanhamentos.join(', ') : 'Nenhum'}\n`;
             message += `🍯 *Calda:* ${caldaVal}\n`;
             message += `➕ *Adicionais:* ${adicionais.length > 0 ? adicionais.join(', ') : 'Nenhum'}\n`;
+            
+            if (obs) {
+                message += `📝 *Obs:* ${obs}\n`;
+            }
+            
+            message += `\n💰 *Total:* ${total}`;
+
+            const phone = '5582996402650';
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+        }
+
+        function sendSorveteOrderToWhatsApp() {
+            const selectedTamanho = document.querySelector('input[name="tamanhoSorvete"]:checked');
+            const tamanhoVal = selectedTamanho ? selectedTamanho.value : 'Não informado';
+            
+            const sabores = Array.from(document.querySelectorAll('input[name="saborSorvete"]:checked'))
+                                 .map(el => el.value);
+            
+            const selectedCobertura = document.querySelector('input[name="coberturaSorvete"]:checked');
+            const coberturaVal = selectedCobertura ? selectedCobertura.value : 'Sem Cobertura';
+            
+            const extras = Array.from(document.querySelectorAll('input[name="extraSorvete"]:checked'))
+                                .map(el => el.value);
+            
+            const obs = document.getElementById('obsSorvete').value.trim();
+            const total = document.getElementById('totalSorvetePrice').innerText;
+
+            let message = `*NOVO PEDIDO DE SORVETE - AÇAÍ DO SANDRINHO*\n\n`;
+            message += `🍦 *Opção:* ${tamanhoVal}\n`;
+            message += `🎨 *Sabores:* ${sabores.length > 0 ? sabores.join(', ') : 'A escolher'}\n`;
+            message += `🍫 *Cobertura:* ${coberturaVal}\n`;
+            message += `✨ *Confeitos & Extras:* ${extras.length > 0 ? extras.join(', ') : 'Nenhum'}\n`;
             
             if (obs) {
                 message += `📝 *Obs:* ${obs}\n`;
